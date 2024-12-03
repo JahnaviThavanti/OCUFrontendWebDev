@@ -1,127 +1,87 @@
-/* Import Tailwind's base styles */
-@tailwind base;
-/* Import Tailwind's component classes */
-@tailwind components;
-/* Import Tailwind's utility classes */
-@tailwind utilities;
- 
-/* Define CSS variables for theming */
-@layer base {
-  :root {
-    /* Base colors */
-    --background: 0 0% 100%;     /* White background */
-    --foreground: 222.2 84% 4.9%; /* Near-black text */
-
-    /* Card colors */
-    --card: 0 0% 100%;           /* White card background */
-    --card-foreground: 222.2 84% 4.9%; /* Card text color */
- 
-    /* Popover colors */
-    --popover: 0 0% 100%;        /* White popover background */
-    --popover-foreground: 222.2 84% 4.9%; /* Popover text color */
- 
-    /* Primary colors - main brand colors */
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
- 
-    /* Secondary colors - supporting colors */
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
- 
-    /* Muted colors - for less prominent elements */
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
- 
-    /* Accent colors - for highlighting */
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
- 
-    /* Destructive colors - for errors/warnings */
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    /* UI element colors */
-    --border: 214.3 31.8% 91.4%;  /* Border color */
-    --input: 214.3 31.8% 91.4%;   /* Input field color */
-    --ring: 222.2 84% 4.9%;       /* Focus ring color */
- 
-    /* Border radius default */
-    --radius: 0.5rem;
-  }
-}
-
-.task-item {
-    background: #f4f4f4;
-    padding: 1rem;
-    margin: 0.5rem 0;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.task-item h3 {
-    margin: 0;
-    color: #333;
-}
-
-.task-item p {
-    display: flex;
-    align-items: center;
-    margin: 5px 0;
-    color: #666
-}
-
 /* Container for the entire form */
 .add-task-form {
-    display:flex;    /* Use flexbox for layout */
-    flex-direction: column; /* Stack children vertically */
-    gap: 1rem;             /* Consistent spacing between elements */
-    max-width: 400px;      /* Limit form width for readability */
-    margin: 1rem 0;        /* Vertical spacing around form */
-    padding: 1rem;         /* Inner spacing */
-    background: #3ed0f5;   /* Light background to stand out */
-    border-radius: 4px;    /* Rounded corners */
-  }
-  
-  /* Container for each form field group */
-  .form-group {
-    display: inline-block;
-    flex-direction: column;
-    gap: 0.5rem;           /* Space between label and input */
-  }
-  
-  /* Style for all labels */
-  .form-group label {
-    font-weight: bold;     /* Make labels stand out */
-    padding: 1rem;
-  }
-  
-  /* Required field indicator */
-  .required {
-    color: red;            /* Red asterisk for required fields */
-    margin-left: 4px;      /* Space between label and asterisk */
-  }
-  
-  /* Style for all inputs and selects */
-  input, select {
-    padding: 0.5rem;       /* Internal spacing */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 4px;    /* Rounded corners */
-    font-size: 1rem;       /* Readable text size */
-  }
-  
-  /* Submit button styling */
-  button[type="submit"] {
-    padding: 0.5rem 1rem;  /* Comfortable click target */
-    background: #0066cc;   /* Blue background */
-    color: white;          /* White text */
-    border: none;          /* Remove default border */
-    border-radius: 4px;    /* Match other border radii */
-    cursor: pointer;       /* Hand cursor on hover */
-    font-size: 1rem;       /* Match input text size */
-  }
-  
-  /* Hover state for submit button */
-  button[type="submit"]:hover {
-    background: #0052a3;   /* Darker blue on hover */
-  }
+  display: flex;           /* Use flexbox for layout */
+  flex-direction: column;  /* Stack children vertically */
+  gap: 1rem;               /* Consistent spacing between elements */
+  max-width: 400px;        /* Limit form width for readability */
+  margin: 1rem 0;          /* Vertical spacing around form */
+  padding: 1rem;           /* Inner spacing */
+  background: #f8f8f8;     /* Light background to stand out */
+  border-radius: 4px;      /* Rounded corners */
+}
 
+/* Container for each form field group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;             /* Space between label and input */
+}
+
+/* Style for all labels */
+.form-group label {
+  font-weight: bold;       /* Make labels stand out */
+}
+
+/* Required field indicator */
+.required {
+  color: red;              /* Red asterisk for required fields */
+  margin-left: 4px;        /* Space between label and asterisk */
+}
+
+/* Style for all inputs and selects */
+input, select {
+  padding: 0.5rem;         /* Internal spacing */
+  border: 1px solid #ddd;  /* Light border */
+  border-radius: 4px;      /* Rounded corners */
+  font-size: 1rem;         /* Readable text size */
+}
+
+/* Submit button styling */
+button[type="submit"] {
+  padding: 0.5rem 1rem;    /* Comfortable click target */
+  background: #0066cc;     /* Blue background */
+  color: white;            /* White text */
+  border: none;            /* Remove default border */
+  border-radius: 4px;      /* Match other border radii */
+  cursor: pointer;         /* Hand cursor on hover */
+  font-size: 1rem;         /* Match input text size */
+}
+
+/* Hover state for submit button */
+button[type="submit"]:hover {
+  background: #0052a3;     /* Darker blue on hover */
+}
+
+/* Style for task item */
+.task-item {
+  background: #f1f1f1;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Completed task style */
+.task-item.completed {
+  background: #d4edda;  /* Light green for completed tasks */
+}
+
+/* Hover effect for task item */
+.task-item:hover {
+  background: #f0f0f0;
+}
+
+/* Style for delete button */
+button {
+  padding: 0.5rem;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #c0392b;
+}
